@@ -14,7 +14,7 @@ def get_connection():
             host=os.getenv("DB_HOST", "localhost"),
             port=int(os.getenv("DB_PORT", "3306")),
             user=os.getenv("DB_USER", "root"),
-            password=os.getenv("DB_PASSWORD", ""),
+            password=os.environ["MYSQL_PASSWORD"],
             database=os.getenv("DB_NAME", "student_manager"),
         )
     except Error as e:
